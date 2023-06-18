@@ -673,6 +673,12 @@ type (
 		Token                *TokenResponse
 		tokenExpiresAt       time.Time
 		returnRepresentation bool
+		GlobalHeaders        []KV
+	}
+
+	KV struct {
+		Key   string
+		Value string
 	}
 
 	// CreditCard struct

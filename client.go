@@ -180,7 +180,19 @@ func (c *Client) NewRequest(ctx context.Context, method, url string, payload int
 		}
 		buf = bytes.NewBuffer(b)
 	}
-	return http.NewRequestWithContext(ctx, method, url, buf)
+
+	req, err := http.NewRequestWithContext(ctx, method, url, buf)
+	if err != nil {
+		return req, err
+	}
+
+	for _, kv := range c.GlobalHeaders {
+		if kv.Key != "" && kv.Value != "" {
+			req.Header.Set(kv.Key, kv.Value)
+		}
+	}
+
+	return req, err
 }
 
 // log will dump request and response to the log file
