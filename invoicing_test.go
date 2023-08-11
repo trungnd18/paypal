@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/di3upham/paypal"
+	"github.com/trungnd18/paypal"
 	"github.com/stretchr/testify/assert"
 )
 

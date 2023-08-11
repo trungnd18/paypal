@@ -1,4 +1,4 @@
-module github.com/di3upham/paypal
+module github.com/trungnd18/paypal
 
 go 1.13
 
